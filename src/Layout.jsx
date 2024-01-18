@@ -1,10 +1,10 @@
-import Header from './SubHeader'
+import Heading from './Heading'
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
 	return (
 		<div className='w-screen min-h-screen'>
-			<Header />
+			<Heading />
 			<Outlet />
 		</div>
 	)

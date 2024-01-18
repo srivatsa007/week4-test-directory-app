@@ -1,4 +1,4 @@
-import Header from './SubHeader'
+import SubHeader from './SubHeader'
 import { useDataContext } from '../Context'
 import { useState } from 'react'
 import { nanoid } from 'nanoid'
@@ -106,7 +106,7 @@ const AddEntry = () => {
 
 	return (
 		<section className='p-6'>
-			<Header title='Add Entry' />
+			<SubHeader title='Add Entry' />
 			<button className='mb-4 btn btn-primary btn-sm' onClick={toggleInput}>
 				{!showInput ? 'Click to add new data' : 'Close the form'}
 			</button>
@@ -192,8 +192,8 @@ const AddEntry = () => {
 					</tbody>
 				</table>
 				{context.data.length === 0 && (
-					<h2 className='py-20 text-3xl font-bold text-center text-error'>
-						No data
+					<h2 className='py-20 text-3xl font-bold text-center  text-red-800'>
+						Empty DataBase !!
 					</h2>
 				)}
 			</div>

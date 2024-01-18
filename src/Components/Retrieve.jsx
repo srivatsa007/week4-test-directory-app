@@ -7,7 +7,7 @@ const RetrieveEntry = () => {
 	const [searchQuery, setSearchQuery] = useState('')
 	const [searchResult, setSearchResult] = useState([])
 	const [searched, setSearched] = useState(false)
-
+	const displayInst = (searched ? <h3 className='text-xl font-medium mb-4 text-red-600'> Blah </h3> :  <h3 className='text-xl font-medium mb-4 text-red-900'> Enter a query to retrieve user information </h3>)
 	/**
 	 * Handles the click event for the retrieve button.
 	 *
@@ -47,6 +47,7 @@ const RetrieveEntry = () => {
 					Retrieve
 				</button>
 			</form>
+			  
 			{searchResult.length > 0 ? (
 				<div>
 					<h3 className='text-xl font-medium mb-4'>Search Result</h3>
@@ -73,15 +74,9 @@ const RetrieveEntry = () => {
 						</tbody>
 					</table>
 				</div>
-			) : searched ? (
-				<h3 className='text-xl font-medium mb-4 text-red-600'>
-					No data found
-				</h3>
-			) : (
-				<h3 className='text-xl font-medium mb-4 text-red-900'>
-					Enter a query to retrieve user information
-				</h3>
-			)}
+			) : (displayInst)
+			
+			}
 		</section>
 	)
 }
